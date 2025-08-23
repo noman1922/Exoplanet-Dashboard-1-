@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exoplanet Discovery Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-planet-moon logo-icon"></i>
+                <h1>Austro 4</h1>
+            </div>
+        </header>
+
+        <div class="title-section">
+            <h2>Exoplanet Discovery Dashboard</h2>
+            <p>Advanced machine learning predictions for exoplanet detection and classification</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-title">Total Detections</div>
+                <div class="stat-value">6</div>
+                <div class="stat-change">
+                    <i class="fas fa-arrow-up"></i>
+                    +7 new candidates today
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Confirmed Exoplanets</div>
+                <div class="stat-value">2</div>
+                <div class="stat-change">High confidence detections</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">Planet Candidates</div>
+                <div class="stat-value">2</div>
+                <div class="stat-change">Awaiting confirmation</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-title">False Positives</div>
+                <div class="stat-value">2</div>
+                <div class="stat-change">Stellar variability</div>
+            </div>
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Detections (6)</button>
+            <button class="filter-btn" data-filter="confirmed">Confirmed (2)</button>
+            <button class="filter-btn" data-filter="candidates">Candidates (2)</button>
+            <button class="filter-btn" data-filter="false">False Positives (2)</button>
+        </div>
+
+        <div class="exoplanets-grid">
+            <!-- Kepler-452 -->
+            <div class="exoplanet-card" data-status="confirmed">
+                <div class="card-header">
+                    <h3 class="card-title">Kepler-452</h3>
+                    <p class="card-subtitle">KOL-7016.01</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">DETECTION CONFIDENCE</div>
+                        <div class="confidence-value high-confidence">94.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill high-confidence" style="width: 94%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Transit Photometry</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">11.4</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Orbital Period:</div>
+                            <div class="detail-value">584.6 days</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: kepler_875</div>
+                    <div class="date">Analysed: 2024-01-15 14:30</div>
+                </div>
+            </div>
+
+            <!-- TRAPPIST-1 -->
+            <div class="exoplanet-card" data-status="confirmed">
+                <div class="card-header">
+                    <h3 class="card-title">TRAPPIST-1</h3>
+                    <p class="card-subtitle">TOL-1876.02</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">Detection Confidence</div>
+                        <div class="confidence-value medium-confidence">71.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill medium-confidence" style="width: 71%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Transit Timing Variation</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">18.8</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: ters_sector_47</div>
+                    <div class="date">Analysed: 2024-01-15 14:25</div>
+                </div>
+            </div>
+
+            <!-- HD 209458 -->
+            <div class="exoplanet-card" data-status="false">
+                <div class="card-header">
+                    <h3 class="card-title">HD 209458</h3>
+                    <p class="card-subtitle">KOL-3284.01</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">Detection Confidence</div>
+                        <div class="confidence-value low-confidence">38.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill low-confidence" style="width: 38%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Radial Velocity</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">7.6</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: kepler_dLdI7</div>
+                    <div class="date">Analysed: 2024-01-15 14:20</div>
+                </div>
+            </div>
+
+            <!-- GJ 1214 -->
+            <div class="exoplanet-card" data-status="candidates">
+                <div class="card-header">
+                    <h3 class="card-title">GJ 1214</h3>
+                    <p class="card-subtitle">TOL-2109.01</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">Detection Confidence</div>
+                        <div class="confidence-value high-confidence">91.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill high-confidence" style="width: 91%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Transit Photometry</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">14.7</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Orbital Period:</div>
+                            <div class="detail-value">158 days</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: ters_fit_sectors</div>
+                    <div class="date">Analysed: 2024-01-15 14:15</div>
+                </div>
+            </div>
+
+            <!-- Proxima Centauri -->
+            <div class="exoplanet-card" data-status="candidates">
+                <div class="card-header">
+                    <h3 class="card-title">Proxima Centauri</h3>
+                    <p class="card-subtitle">TOL-4515.03</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">Detection Confidence</div>
+                        <div class="confidence-value medium-confidence">66.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill medium-confidence" style="width: 66%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Doppler Spectroscopy</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">11.1</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: ters_sector_L2</div>
+                    <div class="date">Analysed: 2024-01-15 14:10</div>
+                </div>
+            </div>
+
+            <!-- Wolf 359 -->
+            <div class="exoplanet-card" data-status="false">
+                <div class="card-header">
+                    <h3 class="card-title">Wolf 359</h3>
+                    <p class="card-subtitle">KOL-8174.02</p>
+                </div>
+                <div class="card-body">
+                    <div class="confidence-meter">
+                        <div class="confidence-label">Detection Confidence</div>
+                        <div class="confidence-value low-confidence">29.0%</div>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill low-confidence" style="width: 29%"></div>
+                        </div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <div class="detail-label">Method:</div>
+                            <div class="detail-value">Astrometry</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Magnitude:</div>
+                            <div class="detail-value">13.5</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="dataset">Dataset: kepler_extended</div>
+                    <div class="date">Analysed: 2024-01-15 14:05</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
